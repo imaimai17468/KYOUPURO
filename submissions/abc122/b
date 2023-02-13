@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+int main(){
+	char b[11];
+  	int i;
+  	int ans = 0;
+  	int count = 0;
+  
+  	scanf("%s", b);
+  
+	for(i=0; i<11;i++){
+    	if(b[i] == 'A' || b[i] == 'T' || b[i] == 'C' || b[i] == 'G'){
+        	count++;
+        }else{
+          	if(count > ans){
+        		ans = count;
+            }
+          	count = 0;
+        }
+    }
+  	printf("%d\n", ans);
+  	return 0;
+}

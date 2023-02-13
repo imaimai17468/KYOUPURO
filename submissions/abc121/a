@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(void){
+  	int h, w, H, W, ans;
+  
+  	scanf("%d %d",&H, &W);
+  	scanf("%d %d",&h, &w);
+	ans = H * W - w * H - (W - w) * h;
+  	printf("%d", ans);
+  	return 0;
+}
