@@ -12,15 +12,16 @@ python環境 / pipのインストールをしてください
 
     `pip install chromedriver_binary==Chromeのバージョン`
 
-        Chromeのバージョンの確認は以下を参照
-        [Google Chrome を更新する](https://support.google.com/chrome/answer/95414?hl=ja&co=GENIE.Platform%3DDesktop)
+    Chromeのバージョンの確認は以下を参照
 
-    これのGoogle Chrome についてというページで確認できる
+    > [Google Chrome を更新する](https://support.google.com/chrome/answer/95414?hl=ja&co=GENIE.Platform%3DDesktop)
+
+    これの`Google Chrome について`というページで確認できる
 
     仮に失敗しても、「このバージョンならインストールできるんだが、、、」みたいのが表示されたはず
 
 ## 実行
 
-実行すると数秒に一回、Chromeでの回答ページが開かれる
+実行すると数秒に一回、ChromeでAtCoderの各問題の解答コードページが開かれる
 
 そのページを読み取って`submissions`フォルダに保存していっているので、開かれたChromeは閉じないように
