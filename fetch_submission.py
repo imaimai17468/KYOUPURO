@@ -1,24 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[3]:
-
-
 import requests
 import json
-
-
-# In[4]:
-
 
 userID = "imaimai_frog" # 自分のAtCoderのユーザーIDを設定する
 unix_second = 0
 api_path = "https://kenkoooo.com/atcoder/atcoder-api/v3/user/submissions?user=" + userID + "&from_second=" + str(unix_second)
-
-
-
-# In[5]:
-
 
 # APIを用いた提出データの取得
 def getSubmissionData():
@@ -27,16 +12,8 @@ def getSubmissionData():
     jsonData = response.json()
     return jsonData
 
-
-# In[6]:
-
-
 submissions = getSubmissionData()
 submissions[:2]
-
-
-# In[7]:
-
 
 # 各問題において最も新しいAC提出のみを取得する
 # 各コンテストごとにまとめて返す
@@ -55,32 +32,15 @@ def collectNewestAcceptedSubmissions(submissions):
         result[sub["contest_id"]].append(sub)
     return result
 
-
-# In[8]:
-
-
 newestSubmits =  collectNewestAcceptedSubmissions(submissions)
-newestSubmits
-
-
-# In[9]:
-
 
 import os
-
-
-# In[10]:
-
 
 root = "submissions/"
 
 for contestName in newestSubmits:
     path = root + contestName
     os.makedirs(path, exist_ok=True)
-
-
-# In[11]:
-
 
 import re
 import html
@@ -89,10 +49,6 @@ from selenium import webdriver
 from time import sleep
 import subprocess
 from selenium.webdriver.common.by import By
-
-
-# In[14]:
-
 
 driver = webdriver.Chrome()
 
@@ -155,10 +111,6 @@ for submissions in newestSubmits.values():
         
 driver.quit()
 
-
-# In[16]:
-
-
 if add_cnt == 0:
     # 何も追加していなければGitにアクセスしない
     print("No added submissions, end process")
@@ -168,6 +120,8 @@ else:
     import datetime
 
     dt_now = datetime.datetime.now()
+    
+    # 自分のリポジトリのURL+".git"
     repo_url = "https://github.com/imaimai17468/KYOUPURO.git"
     repo = git.Repo()
     repo.git.add("submissions/*")
