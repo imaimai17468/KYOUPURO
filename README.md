@@ -4,11 +4,12 @@
 python環境 / pipのインストールをしてください
 
 ## ライブラリをインストール
-1. 必要なものはほぼ全て`requirements.txt`に入っている
+1. submissions以外のファイルをコピーしてね！（git cloneもアリ）
+1. 必要なものはほぼ全て`requirements.txt`に入っているので、pipでインストールできる！
 
     `pip install -r requirements.txt`
 
-2. `chromedriver_binary`は手動でインストール
+1. `chromedriver_binary`は手動でインストールしよう！
 
     `pip install chromedriver_binary==Chromeのバージョン`
 
@@ -20,7 +21,15 @@ python環境 / pipのインストールをしてください
 
     仮に失敗しても、「このバージョンならインストールできるんだが、、、」みたいのが表示されたはず
 
+## コードの変更
+- 4行目を自分のAtCoderのアカウント名に
+- 125行目を、自分のリポジトリ名+`.git`に
+
+にしてね！
+
 ## 実行
+
+`python fetch_submission.py `
 
 実行すると数秒に一回、ChromeでAtCoderの各問題の解答コードページが開かれる
 
